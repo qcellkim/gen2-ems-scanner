@@ -102,16 +102,7 @@ launchctl unload ~/Library/LaunchAgents/com.gen2ems.scanner.plist
 3. `python scanner.py` — 실제 TEAMS 전송, 채널에서 메시지 확인
 4. `launchctl start com.gen2ems.scanner` — launchd 즉시 실행으로 스케줄 동작 확인
 
-## 파일 구조
+```
 
-```
-gen2-ems-scanner/
-├── scanner.py
-├── requirements.txt
-├── .env.example
-├── .gitignore
-├── README.md
-├── launchd/
-│   └── com.gen2ems.scanner.plist
-└── debug/                    # 자동 생성
-```
+## crontab
+0 9 * * 1 source .venv/bin/activate && python /경로/scanner.py
